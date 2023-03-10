@@ -6,11 +6,15 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: argocd
-    server: {{ .Values.spec.destination.server }}
   project: default
+  destination:
+    namespace: guestbook
+    server: {{ .Values.spec.destination.server }}
   source:
     path: guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
