@@ -10,5 +10,5 @@ spec:
     targetRevision: 1.17.1
     chart: istiod
   destination:
-    server: "https://kubernetes.default.svc"
+    server: {{ .Values.spec.destination.server }}
     namespace: istio-system
