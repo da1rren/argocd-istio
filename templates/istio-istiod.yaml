@@ -1,10 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-project: default
-source:
-  repoURL: "https://istio-release.storage.googleapis.com/charts"
-  targetRevision: 1.17.1
-  chart: istiod
-destination:
-  server: "https://kubernetes.default.svc"
-  namespace: istio-system
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://istio-release.storage.googleapis.com/charts"
+    targetRevision: 1.17.1
+    chart: istiod
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: istio-system
