@@ -14,3 +14,6 @@ spec:
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: istio-gateway
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
