@@ -13,4 +13,4 @@ spec:
     chart: gateway
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: istio-system
+    namespace: istio-gateway
