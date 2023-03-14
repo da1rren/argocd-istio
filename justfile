@@ -1,4 +1,5 @@
 cluster: _cluster _argo _lb _apps
+	kubectl -n argocd patch configmaps argocd-cm --patch-file '{{justfile_directory()}}/charts/argocd/argocd-cm-patch.yaml'
 	kubectl wait deployment -n argocd --for condition=Available=True --timeout=240s --all
 	
 dashboard:
