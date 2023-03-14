@@ -4,7 +4,7 @@ metadata:
   name: istio-base
   namespace: 
   annotations:
-    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "-100"
 spec:
   project: default
   ignoreDifferences:
@@ -23,3 +23,6 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

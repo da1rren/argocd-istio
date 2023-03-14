@@ -1,4 +1,2 @@
 pilot:
   image: localhost:5001/istio/pilot:1.17.1
-  podAnnotations:
-    argocd.argoproj.io/sync-wave: "1"

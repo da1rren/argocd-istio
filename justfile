@@ -2,10 +2,12 @@ cluster: _cluster _argo _lb _apps
 	kubectl wait deployment -n argocd --for condition=Available=True --timeout=240s --all
 	
 dashboard:
+	kubectl port-forward -n argocd deployment/argo-argocd-server 8080:8080
 	argocd login localhost:8080 --username admin --password password --insecure
 
 cleanup:
 	kind delete clusters --all
+	argocd logout localhost:8080
 
 rebuild: cleanup cluster
 

@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: istio-istiod
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-50"
+
 spec:
   project: default
 
@@ -10,6 +13,11 @@ spec:
     server: '{{ .Values.spec.destination.server }}'
     namespace: istio-system
   
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+
   sources:
     - repoURL: "https://istio-release.storage.googleapis.com/charts"
       targetRevision: 1.17.1
