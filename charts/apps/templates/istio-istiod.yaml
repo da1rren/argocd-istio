@@ -11,6 +11,7 @@ spec:
       chart: istiod
 
     - repoURL: "https://github.com/da1rren/argocd-istio.git"
+      targetRevision: HEAD
       helm:
         valueFiles:
         - $values/environments/local/istio-istiod/values.yaml

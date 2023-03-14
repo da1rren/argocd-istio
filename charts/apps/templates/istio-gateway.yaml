@@ -11,6 +11,7 @@ spec:
       chart: gateway
 
     - repoURL: "https://github.com/da1rren/argocd-istio.git"
+      targetRevision: HEAD
       helm:
         valueFiles:
         - $values/environments/local/istio-gateway/values.yaml
