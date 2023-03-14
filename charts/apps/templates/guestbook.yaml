@@ -9,12 +9,9 @@ spec:
   project: default
   destination:
     namespace: guestbook
-    server: {{ .Values.spec.destination.server }}
+    server: "{{ .Values.spec.destination.server }}"
   source:
     path: guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
 

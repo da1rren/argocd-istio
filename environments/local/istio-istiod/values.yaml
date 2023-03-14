@@ -1,0 +1,3 @@
+pilot:
+  podAnnotations:
+    argocd.argoproj.io/sync-wave: "1"
