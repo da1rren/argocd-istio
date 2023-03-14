@@ -5,17 +5,19 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  sources:
-    - repoURL: "https://istio-release.storage.googleapis.com/charts"
-      targetRevision: 1.17.1
-      chart: istiod
-
-    - repoURL: "https://github.com/da1rren/argocd-istio.git"
-      targetRevision: HEAD
-      helm:
-        valueFiles:
-        - $values/environments/local/istio-istiod/values.yaml
 
   destination:
     server: '{{ .Values.spec.destination.server }}'
     namespace: istio-system
+  
+  sources:
+    - repoURL: "https://istio-release.storage.googleapis.com/charts"
+      targetRevision: 1.17.1
+      chart: istiod
+      helm:
+        valueFiles:
+        - $values/environments/local/istio-istiod/values.yaml
+
+    - repoURL: 'https://github.com/da1rren/argocd-istio.git'
+      targetRevision: HEAD
+      ref: values
