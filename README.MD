@@ -1,5 +1,7 @@
 # Deploying Istio with ArgoCD
 
+Parking until dependency management is resolved in argo: https://github.com/argoproj/argo-cd/issues/7437
+
 This is a small repo is demo deploying Istio with ArgoCD.  Using sync waves to coordinate.
 
 ## Requirements

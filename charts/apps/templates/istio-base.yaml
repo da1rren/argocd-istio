@@ -20,7 +20,3 @@ spec:
   destination:
     server: "{{ .Values.spec.destination.server }}"
     namespace: istio-system
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
