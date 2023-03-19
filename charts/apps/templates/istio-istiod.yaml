@@ -24,3 +24,8 @@ spec:
     - repoURL: 'https://github.com/da1rren/argocd-istio.git'
       targetRevision: HEAD
       ref: values
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
