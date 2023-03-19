@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap
+  namespace:
+spec:
+  project: default
+  source:
+    repoURL: "https://da1rren.github.io/argocd-istio/"
+    targetRevision: 0.3.0
+    chart: bootstrap
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd

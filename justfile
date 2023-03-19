@@ -30,4 +30,4 @@ _lb:
 	kubectl apply -f '{{justfile_directory()}}/charts/metal-lb/ip-pool.yaml'
 
 _apps:
-	helm install -n argocd apps '{{justfile_directory()}}/charts/apps/'
+	kubectl apply -f '{{justfile_directory()}}/charts/bootstrap/bootstrap.yaml'
