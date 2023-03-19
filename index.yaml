@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/da1rren/argocd-istio/releases/download/applications-0.2.0/applications-0.2.0.tgz
     version: 0.2.0
-generated: "2023-03-19T17:05:47.611834949Z"
+  bootstrap:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-03-19T17:12:12.350554289Z"
+    description: Applications
+    digest: 6b13306c3776298d764b21253310f1caa5051b149efa7cfcc02f2448af3bb04e
+    name: bootstrap
+    type: application
+    urls:
+    - https://github.com/da1rren/argocd-istio/releases/download/bootstrap-0.3.0/bootstrap-0.3.0.tgz
+    version: 0.3.0
+generated: "2023-03-19T17:12:12.35056159Z"
