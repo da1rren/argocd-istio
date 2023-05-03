@@ -27,17 +27,17 @@ repoServer:
 applicationSet:
   replicaCount: 1
 
-global:
-  image:
-    repository: "localhost:5001/argoproj/argocd"
+# global:
+#   image:
+#     repository: "localhost:5001/argoproj/argocd"
 
-dex:
-  image:
-    repository: "localhost:5001/dexidp/dex"
+# dex:
+#   image:
+#     repository: "localhost:5001/dexidp/dex"
 
-redis:
-  image:
-    repository: "localhost:5001/docker/library/redis"
+# redis:
+#   image:
+#     repository: "localhost:5001/docker/library/redis"
 
 configs:
   secret:
