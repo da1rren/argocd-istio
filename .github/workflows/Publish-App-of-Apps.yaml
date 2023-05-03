@@ -19,6 +19,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+          versionSpec: '5.x'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0
+        id:   gitversion
+
+      - name: Display GitVersion outputs (step output)
+        run: |
+          echo "Major: ${{ steps.gitversion.outputs.major }}"
+
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
