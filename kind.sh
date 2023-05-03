@@ -45,6 +45,9 @@ if [ "$(docker inspect -f '{{.State.Running}}' "${reg_name}" 2>/dev/null || true
   docker tag gcr.io/heptio-images/ks-guestbook-demo:0.2 localhost:5001/heptio-images/ks-guestbook-demo:0.2
   docker push localhost:5001/heptio-images/ks-guestbook-demo:0.2
 
+  docker pull quay.io/argoproj/argocd:v2.6.7
+  docker tag quay.io/argoproj/argocd:v2.6.7 localhost:5001/argoproj/argocd:v2.6.7
+  docker push localhost:5001/argoproj/argocd:v2.6.7
 fi
 
 # create a cluster with the local registry enabled in containerd
