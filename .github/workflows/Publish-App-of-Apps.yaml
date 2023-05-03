@@ -30,9 +30,10 @@ jobs:
         with:
           additionalArguments: '/overrideconfig tag-prefix=bootstrap-'
 
-      - name: Display GitVersion outputs (step output)
+      - name: Package Helm
         run: |
-          echo "Major: ${{ steps.gitversion.outputs.major }}"
+          echo "Creating bootstrap chart with version: ${{ steps.gitversion.outputs.fullSemVer }}"
+          helm package charts/apps --version ${{ steps.gitversion.outputs.fullSemVer }}
 
       - name: Configure Git
         run: |
